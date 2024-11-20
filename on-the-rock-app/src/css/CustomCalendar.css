@@ -1,0 +1,109 @@
+.calendarContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 550px;
+  max-width: 100%;
+  height: 600px;
+}
+
+.react-calendar {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  box-shadow: 0px 0px 3px #625151;
+  border-radius: 5px;
+}
+
+.react-calendar__navigation {
+  background: #8090BF;
+  height: 80px;
+  border-radius: 5px 5px 0 0;
+}
+
+.react-calendar__navigation span {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  font-family: Nanum Gothic;
+}
+
+.react-calendar__navigation__arrow {
+  color: white;
+}
+
+.react-calendar__navigation button:disabled {
+  background-color: #8090BF;
+  border-radius: 20px 20px 0 0;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #8090BF;
+  border-radius: 20px 20px 0 0;
+}
+
+.react-calendar__month-view {
+  padding: 10px;
+  font-family: Nanum Gothic;
+}
+
+.react-calendar__month-view abbr {
+  color: #625151;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.react-calendar__month-view__weekdays {
+  margin-bottom: 15px;
+}
+
+.react-calendar__month-view__weekdays abbr {
+  font-size: 18px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.react-calendar__tile {
+  text-align: center;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus,
+.react-calendar__tile--active {
+  background: #BBC4DC;
+  border-radius: 14px;
+}
+
+.react-calendar__tile--now {
+  background: #FFF9F2;
+  border-radius: 14px;
+}
+
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background: #BBC4DC;
+  border-radius: 14px;
+}
+
+/* mobile media query */
+@media screen and (max-width: 768px) {
+  .react-calendar {
+    width: 90%;
+    height: 90%;
+  }
+}
+
+/* web media query for larger screens */
+@media screen and (min-width: 769px) {
+  .react-calendar {
+    width: 100%; /* Adjust the width for larger screens */
+    height: 100%; /* Adjust the height for larger screens */
+  }
+}

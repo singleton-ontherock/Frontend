@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Black+Han+Sans&family=Do+Hyeon&family=Gothic+A1&family=Nanum+Gothic&family=Nanum+Gothic+Coding&family=Noto+Serif+KR:wght@200..900&family=Orbit&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'goorm-sans-bold';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/goorm-sans-bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+@tailwind base;
+@tailwind components;
+
+@tailwind utilities;
+
+/* 스크롤바 숨기기 위한 사용자 정의 CSS */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE 및 Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* 웹킷 기반 브라우저(Chrome, Safari 등)를 위한 스크롤바 스타일링 */
+::-webkit-scrollbar {
+  width: 14px; /* 스크롤바의 너비 */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* 스크롤바 트랙(배경)의 색상 - 연한 회색 */
+  border-radius: 6px
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #8090BF; /* 스크롤바 썸(이동하는 부분)의 색상 */
+  border-radius: 6px; /* 스크롤바 썸의 모서리를 둥글게 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #777777; /* 마우스 오버 시 스크롤바 썸의 색상 - 약간 어둡게 */
+  shadow: 20px;
+}
+
+
+.safe-area {
+  padding-top: env(safe-area-inset-top);
+  padding-right: env(safe-area-inset-right);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+}
+
+.blur-top {
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+  backdrop-filter: blur(1.5px);
+}
+
+.blur-bottom {
+  background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
+  backdrop-filter: blur(1px);
+}
+
+@layer components {
+  .card-static-size {
+    @apply w-[282px] h-[348px];
+  }
+
+  .card-dynamic-size {
+    @apply absolute top-0 left-0 w-full h-full;
+  }
+
+  .card-front-back {
+    @apply z-10 flex flex-col px-6 py-7 bg-white rounded-[20px] shadow-md;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+@layer utilities {
+  .rotate-y-180 {
+    transform:rotateY(180deg)
+  }
+}
